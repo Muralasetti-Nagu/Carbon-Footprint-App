@@ -1,0 +1,4 @@
+carbon-footprint-reduction/node_modules/
+carbon-footprint-backend/node_modules/
+carbon-footprint-backend/.env
+*.log

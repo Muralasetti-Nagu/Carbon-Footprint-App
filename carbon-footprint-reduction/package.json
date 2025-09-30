@@ -1,0 +1,22 @@
+{
+  "name": "carbon-footprint-reduction",
+  "version": "1.0.0",
+  "description": "This is my Carbon Footprint project",
+  "main": "index.js",
+  "scripts": {
+    "dev": "concurrently \"vite\" \"npm run dev --prefix ../carbon-footprint-backend\"",
+    "start": "vite",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Nagu",
+  "license": "ISC",
+  "devDependencies": {
+    "autoprefixer": "^10.4.21",
+    "concurrently": "^9.2.0",
+    "postcss": "^8.5.6",
+    "tailwindcss": "^3.4.17"
+  },
+  "dependencies": {
+    "@tailwindcss/vite": "^4.1.11"
+  }
+}
