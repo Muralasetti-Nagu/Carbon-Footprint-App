@@ -7,6 +7,7 @@ function Suggestions() {
     "Plant trees and support reforestation.",
     "Recycle and reuse items wherever possible.",
     "Buy locally produced goods to reduce transportation emissions.",
+    "Use reduce, reuse and recycle."
   ];
 
   return (

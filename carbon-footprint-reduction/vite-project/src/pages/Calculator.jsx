@@ -10,7 +10,6 @@ export default function Calculator() {
   const navigate = useNavigate();
 
   const calculate = () => {
-    // Get user identifier (try userId first, fallback to email)
     const userId = localStorage.getItem('userId');
     const email = localStorage.getItem('email');
     const userKey = userId || email;
@@ -30,18 +29,14 @@ export default function Calculator() {
 
     const today = new Date().toISOString().split('T')[0];
     
-    // Get existing emissions data
     const existing = JSON.parse(localStorage.getItem('emissions')) || {};
 
-    // Get user-specific emissions (create if doesn't exist)
     const userEmissions = existing[userKey] || {};
     userEmissions[today] = Number(emissionValue);
 
-    // Save back to localStorage
     existing[userKey] = userEmissions;
     localStorage.setItem('emissions', JSON.stringify(existing));
 
-    // Also save current user's data separately for quick access
     localStorage.setItem(`user_${userKey}_emissions`, JSON.stringify(userEmissions));
 
     toast.success(`✅ Emission saved: ${emissionValue} kg CO₂`, {
