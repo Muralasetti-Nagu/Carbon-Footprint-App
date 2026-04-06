@@ -10,12 +10,19 @@ const db = mysql.createConnection({
   database: process.env.DB_NAME,
 });
 
-db.connect((err) => {
-  if (err) {
-    console.error("DB Connection Error:", err);
-  } else {
-    console.log("Connected to MySQL DB!");
-  }
-});
+// Return a promise that resolves when DB is connected
+export const connectDB = () => {
+  return new Promise((resolve, reject) => {
+    db.connect((err) => {
+      if (err) {
+        console.error("DB Connection Error:", err);
+        reject(err);
+      } else {
+        console.log("✓ Connected to MySQL DB!");
+        resolve();
+      }
+    });
+  });
+};
 
 export default db;
